@@ -47,6 +47,8 @@ expr: expr OpAdd term { $$ = $1 + $3; }
         | expr OpSub TrueKw { throw runtime_error("Error: No se puede restar un entero con un booleano!\n"); }
         | expr OpAdd FalseKw { throw runtime_error("Error: No se puede sumar un entero con un booleano!\n"); }
         | expr OpSub FalseKw { throw runtime_error("Error: No se puede restar un entero con un booleano!\n"); }
+        | expr GreaterEqual FalseKw { throw runtime_error("Error: No se puede comparar un entero con un booleano!\n"); }
+        | expr LessEqual FalseKw { throw runtime_error("Error: No se puede comparar un entero con un booleano!\n"); }
         | term { $$ = $1; }
     ;
 
