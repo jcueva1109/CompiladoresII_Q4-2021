@@ -4,7 +4,7 @@
 %{
 
     #include "tokens.h"
-    extern int yylval;
+    // extern int yylval;
 
 %}
 
